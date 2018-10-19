@@ -1,0 +1,8 @@
+{
+  "name": "new-scrapings-collector",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/jsamuel-waters/new-scrapings-collector.git",
+  "author": "JSamuel <jsamuel.waters@gmail.com>",
+  "license": "MIT"
+}
