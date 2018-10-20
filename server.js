@@ -44,7 +44,9 @@
 
 app.get('/scrape', function(req, res) {
   request('https://www.breitbart.com/', function(error, response, html) {
-    var $ = cheerio.load(html);
+		var $ = cheerio.load(html);
+		console.log(html);
+		
     $('article h2').each(function(i, element) {
 
 				var result = {};
