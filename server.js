@@ -15,8 +15,16 @@
 	app.use(express.static('public')); // (create a public folder and land there)
 
 // = Database configuration ================================================
-	mongoose.connect('mongodb://localhost/mongoosescraper');
+		var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoosescraper";
 	var db = mongoose.connection;
+	// Set mongoose to leverage built in JavaScript ES6 Promises
+	// Connect to the Mongo DB
+	mongoose.Promise = Promise;
+	mongoose.connect(MONGODB_URI);
+
+
+
+
 
 	db.on('error', function (err) {
 		console.log('Mongoose Error: ', err);
@@ -109,9 +117,9 @@ app.post('/articles/:id', function(req, res){
 
 
 
+var PORT = process.env.PORT || 3008
 
 
-
-app.listen(3008, function() {
-  console.log('App running on port 3008!');
+app.listen(PORT, function() {
+  console.log('App running on port ' + PORT + '!');
 });
