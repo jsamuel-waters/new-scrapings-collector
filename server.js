@@ -43,7 +43,7 @@
 	});
 
 app.get('/scrape', function(req, res) {
-  request('http://www.echojs.com/', function(error, response, html) {
+  request('https://www.breitbart.com/', function(error, response, html) {
     var $ = cheerio.load(html);
     $('article h2').each(function(i, element) {
 
